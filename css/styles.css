@@ -118,6 +118,15 @@ nav.scrolled {
 
 /* =========================================================
    BUTTONS
+.btn::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: currentColor;
+  transform: translateY(101%);
+  transition: transform .4s var(--ease-smooth);
+}
+.btn span { position: relative; z-index: 1; }
+.btn:hover::before { transform: translateY(0); }
 ========================================================= */
 .btn {
   display: inline-block;
@@ -129,21 +138,15 @@ nav.scrolled {
   cursor: pointer; transition: var(--transition);
   position: relative; overflow: hidden;
 }
-.btn::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: currentColor;
-  transform: translateY(101%);
-  transition: transform .4s var(--ease-smooth);
-}
-.btn span { position: relative; z-index: 1; }
-.btn:hover::before { transform: translateY(0); }
+
 .btn-bark { color: var(--bark); }
-.btn-bark:hover { color: var(--cream); }
+.btn-bark:hover { color: var(--clay); }
 .btn-white { color: var(--white); }
 .btn-white:hover { color: var(--bark); }
 .btn-moss { color: var(--moss); }
 .btn-moss:hover { color: var(--white); }
+.btn-clay { color: var(--clay); }
+.btn-clay:hover { color: var(--white); }
 
 /* =========================================================
    ██  HOME PAGE
