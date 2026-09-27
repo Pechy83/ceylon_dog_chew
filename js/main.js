@@ -59,24 +59,6 @@ function triggerReveal() {
 }
 triggerReveal();
 
-// ─── Form submit ─────────────────────────────────────────────
-function submitForm() {
-  const email = document.getElementById('email').value.trim();
-  const fname = document.getElementById('fname').value.trim();
-  if (!fname || !email) {
-    alert('Please enter at least your name and email address.');
-    return;
-  }
-  document.getElementById('form-success').classList.add('show');
-  // Reset fields
-  ['fname','lname','company','email','message'].forEach(id => {
-    document.getElementById(id).value = '';
-  });
-  document.getElementById('country').selectedIndex = 0;
-  document.getElementById('enq-type').selectedIndex = 0;
-  document.getElementById('volume').selectedIndex = 0;
-}
-
 // ─── Hero entrance animation ─────────────────────────────────
 window.addEventListener('load', () => {
   document.querySelectorAll('.hero-content > *').forEach((el, i) => {
