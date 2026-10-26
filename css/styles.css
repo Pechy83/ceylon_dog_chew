@@ -27,7 +27,6 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
-  font-family: var(--ff-body);
   background: var(--cream);
   color: var(--earth);
   overflow-x: hidden;
@@ -64,10 +63,11 @@ nav.scrolled {
 .nav-logo {
   font-family: var(--ff-display);
   font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--bark);
+  font-weight: 900;
+  color: rgb(231, 193, 177);
   letter-spacing: .04em;
   display: flex; align-items: center; gap: .6rem;
+
 }
 .nav-logo .leaf-icon { font-size: 1.4rem; }
 .nav-links {
@@ -78,7 +78,7 @@ nav.scrolled {
   font-weight: 800;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: black;
+  color: rgb(236, 191, 171);
   opacity: .7;
   transition: opacity var(--transition), color var(--transition);
   position: relative;
@@ -144,8 +144,8 @@ nav.scrolled {
   position: relative; overflow: hidden;
 }
 
-.btn-bark { color: var(--bark); }
-.btn-bark:hover { color: var(--clay); }
+.btn-bark { color: rgb(95, 168, 53); }
+.btn-bark:hover { color: rgb(236, 191, 171); }
 .btn-white { color: var(--white); }
 .btn-white:hover { color: var(--bark); }
 .btn-moss { color: var(--moss); }
@@ -185,7 +185,8 @@ nav.scrolled {
 .hero-eyebrow {
   font-size: .7rem; font-weight: 500;
   letter-spacing: .22em; text-transform: uppercase;
-  color: var(--leaf); margin-bottom: 1.4rem;
+  color: rgb(95, 168, 53);
+  margin-bottom: 1.4rem;
   margin-left: 80px;
   display: flex; align-items: center; gap: .8rem;
 }
@@ -469,7 +470,7 @@ nav.scrolled {
 .about-hero-label::before { content: ''; width: 2rem; height: 1px; background: var(--leaf); }
 .about-hero h1 {
   font-family: var(--ff-display);
-  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-size: clamp(2.0rem, 5vw, 3.2rem);
   font-weight: 700; line-height: 1.12; max-width: 14ch;
 }
 .about-hero h1 em { font-style: italic; color: var(--clay); }
@@ -758,7 +759,7 @@ nav.scrolled {
 }
 .contact-hero h1 {
   font-family: var(--ff-display);
-  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-size: clamp(2.0rem, 5vw, 3.0rem);
   font-weight: 700; line-height: 1.1; max-width: 18ch;
   position: relative; z-index: 2;
 }
@@ -894,7 +895,7 @@ footer {
 @media (max-width: 1024px) {
   .hero { grid-template-columns: 1fr; }
   .hero-visual { display: none; }
-  .hero-content { padding: 8rem 2.5rem 5rem; }
+  .hero-content { padding: 0rem 2.5rem 3rem; }
   .story { grid-template-columns: 1fr; }
   .story-image { min-height: 260px; }
   .story-content { padding: 4rem 2.5rem; }
@@ -914,7 +915,7 @@ footer {
   .reach-us-grid { grid-template-columns: repeat(2,1fr); }
   footer { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem 2.5rem; }
   .footer-bottom { padding: 1rem 2.5rem; flex-direction: column; gap: .5rem; }
-  .about-hero, .contact-hero, .product-hero { padding: 8rem 2.5rem 5rem; }
+  .about-hero, .contact-hero, .product-hero { padding: 6rem 2.5rem 2rem; }
   .about-story-content, .ingredients { padding: 4rem 2.5rem; }
   .certifications { padding: 4rem 2.5rem; }
   .product-hero { grid-template-columns: 1fr; }
@@ -960,7 +961,7 @@ footer {
 
 @media (max-width: 768px) {
   .logo-img {
-    height: 100px;
+    height: 110px;
   }
   .nav-logo {
     font-size: 1.3rem;
@@ -969,7 +970,7 @@ footer {
 
 @media (max-width: 480px) {
   .logo-img {
-    height: 60px;
+    height: 80px;
   }
   .nav-logo {
     font-size: 1.1rem;
@@ -1621,3 +1622,84 @@ footer {
     border-radius: 14px;
   }
 } 
+
+/* HOMEPAGE – background photo */
+
+.home-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(
+            rgba(20, 25, 15, 0.40),
+            rgba(20, 25, 15, 0.55)
+        ),
+        url("/assets/Meggie_palm.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: rgb(236, 191, 171);
+    text-align: center;
+    padding: 60px 24px;
+    box-sizing: border-box;
+}
+
+/* Nadpis na fotografii */
+
+.home-hero h1 {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 120px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+    justify-content: flex-start;
+    text-align: left;
+}
+
+/* Text na fotografii */
+
+.home-hero p {
+    max-width: 500px;
+    margin: 0 auto 30px;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    line-height: 1.6;
+}
+
+/* Mobilní zařízení */
+
+@media (max-width: 768px) {
+    .home-hero {
+        min-height: 85vh;
+        background-position: center;
+        padding: 50px 20px;
+    }
+    .home-hero p {
+        margin-top: 40px;
+        font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+    }
+}
+
+.contact-hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(
+            rgba(20, 25, 15, 0.40),
+            rgba(20, 25, 15, 0.55)
+        ),
+        url("/assets/product_foto.jpg");
+
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+
+    color: rgb(236, 191, 171);
+    text-align: center;
+    padding: 60px 24px;
+    box-sizing: border-box;
+}
